@@ -1,0 +1,7 @@
+Receive intent: receive-1 — INTENT ONLY, get paid via your own provider, then approve-receive.
+Receive approved (ledger only)
+Saved to savings pot
+Subscription sub-1 pending approval
+Subscription active — pre-approved recurring only
+Autopilot subscription charge (ledger only)
+Ledger balance: $140.0 | Savings: $50.0 (mock, $0 real) | killed: False
