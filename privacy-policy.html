@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Agent Wallet — Privacy Policy</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 760px; margin: 2.5rem auto; padding: 0 1.2rem; color: #16222c; line-height: 1.65; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-top: 1.8rem; }
+    code { background: #eef3f6; padding: 1px 6px; border-radius: 5px; }
+    .updated { color: #5a7184; }
+  </style>
+</head>
+<body>
+  <h1>Agent Wallet — Privacy Policy</h1>
+  <p class="updated">Last updated: November 6, 2026 · Applies to the Agent Wallet Chrome extension (v1.2.0+), published by Edge Agency.</p>
+
+  <h2>The short version</h2>
+  <p>Agent Wallet stores your settings and transaction ledger <b>only in your own browser</b>. It never handles private keys or seed phrases, runs no analytics or telemetry, has no user accounts, and never sells or shares data. The only network calls it makes are the ones described below, and each exists because a feature you used asked for it.</p>
+
+  <h2>What the extension stores (locally, on your device)</h2>
+  <ul>
+    <li>Your spending policy: per-transaction and daily caps, approval line, payee allowlist, kill-switch state.</li>
+    <li>Your proposal and transaction ledger: amounts, recipient addresses, timestamps, statuses, and transaction hashes for sends you approved.</li>
+    <li>Your agent identity: an optional display name and an optional Bitcoin address you provide.</li>
+    <li>The address and chain of the wallet you connect (the public address your wallet shares when you approve the connection).</li>
+  </ul>
+  <p>All of this lives in <code>chrome.storage.local</code> on your device. Uninstalling the extension deletes it. None of it is transmitted to Edge Agency or any server we operate — we operate no server for this product.</p>
+
+  <h2>Network calls the extension makes</h2>
+  <ul>
+    <li><b>Bitcoin balance lookups.</b> If you save a Bitcoin address, the extension sends that public address to <code>mempool.space</code> (fallback: <code>blockstream.info</code>) to fetch its public balance when you press “Check balance.” A Bitcoin address is public information on the Bitcoin network.</li>
+    <li><b>Your own wallet.</b> EVM balance reads and transaction confirmations happen through the wallet extension you installed and connected (for example MetaMask), in your browser. We never see or relay your keys, signatures, or seed phrase — the extension cannot access them.</li>
+    <li><b>Provider links you click.</b> “Buy” and “Sell / cash out” buttons open MoonPay or Transak in a new tab with your public wallet address prefilled. Anything you do there — including any identity verification or payment details — is between you and that provider, under their privacy policy. The swap shortcut opens Uniswap similarly.</li>
+    <li><b>Optional local bridge.</b> If you enable the agent bridge, the extension connects to a bridge process <i>you</i> run on your own machine at <code>127.0.0.1:8788</code> so your own MCP agents can propose spends. This connection never leaves your computer.</li>
+  </ul>
+
+  <h2>What the extension never does</h2>
+  <ul>
+    <li>Never requests, stores, or transmits private keys, seed phrases, or wallet passwords.</li>
+    <li>Never reads or stores your browsing history or page content. Page scripts exist only to detect your wallet's provider and to let pages <i>propose</i> payments (which your policy and you then approve or deny).</li>
+    <li>No analytics, no telemetry, no ads, no tracking cookies, no data sale — ever.</li>
+    <li>Never moves funds without the on-chain confirmation in your own wallet.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>Agent Wallet is a financial tool for adults and is not directed at children under 13.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the updated version will be posted at this URL with a new date, and material changes will be noted in the extension's store listing.</p>
+
+  <h2>Contact</h2>
+  <p>Edge Agency — <a href="mailto:hello@agencylead.ca">hello@agencylead.ca</a></p>
+</body>
+</html>
